@@ -1,5 +1,5 @@
 // Global constants
-const CLIENT_ID = 2848213; 	// Id of VK application "Wall Image Uploader" (Русское название: "Постим картинки на стену")
+const CLIENT_ID = <YOUR_APP_ID>; 	// Id of VK application "Wall Image Uploader" (Русское название: "Постим картинки на стену")
 const AUTHORIZATION_URI = "https://api.vkontakte.ru/oauth/authorize";	// Authorization uri for vkontakte.ru
 const REDIRECT_URI_COM = "http://api.vk.com/blank.html";	// Redirect uri for vk.com
 const REDIRECT_URI_RU = "http://api.vkontakte.ru/blank.html"; // Redirect uri for vkontakte.ru
