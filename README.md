@@ -25,4 +25,4 @@ In accordance with the requirements of Google manifest.json has been upgraded tw
 
 Russian:
 В соответствии с требованиями Google manifest.json обновился до версии 2.0. Старый файл манифеста переименован под именем manifest_version_1.json и оставлен в проекте.
---------------------------------------------------
+
