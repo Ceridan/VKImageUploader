@@ -18,6 +18,7 @@ var gImageBlob = null;     		// Blob from image data
 var gIsAuthInProgress = false;	// Is authorization in progress (used in chrome.tabs.onUpdated)
 var gIsGroup = false;			// Post to the groups wall
 var gFromGroup = 0;				// Post from the group name
+var gSignedPost = 0;				// Post to the group wall is signed (value = 1) or anonymous (value = 0)
 
 // Read global variables from local storage
 function initGlobalVariables() {
@@ -53,6 +54,13 @@ function initGlobalVariables() {
 	var expiresIn = vkiuPreferencesGetItem("vkExpiresIn");
 	if (expiresIn) {
 		gExpiresIn = expiresIn;
+	}
+
+	var signedPost = vkiuPreferencesGetItem("signedPost");
+	if ((signedPost) && (signedPost == "1")) {
+		gSignedPost = 1;
+	} else {
+		gSignedPost = 0;
 	}
 }
 
@@ -168,7 +176,7 @@ function vkSaveWallPhoto(apiUrl, accessToken, entityId, serverId, photoData, has
 };
 
 // Step 4. Post wall message with attachment
-function vkWallPost(apiUrl, accessToken, entityId, photoId, fromGroup) {
+function vkWallPost(apiUrl, accessToken, entityId, photoId, fromGroup, signedPost) {
 	if ((apiUrl != null) && (accessToken != null) && (entityId != null) && (photoId != null)) {
 		var postUrl = apiUrl;
 		postUrl += "/method/wall.post";
@@ -176,7 +184,7 @@ function vkWallPost(apiUrl, accessToken, entityId, photoId, fromGroup) {
 		postUrl += "&owner_id=" + entityId;		
 		postUrl += "&attachments=" + photoId;
 		postUrl += "&from_group=" + fromGroup;
-		postUrl += "&signed=1";
+		postUrl += "&signed=" + signedPost;
 		
         try {
         	requestExec("GET", postUrl, "vkWallPost", false, null);
@@ -311,9 +319,9 @@ function requestExec(method, url, source, isAsyncRequest, data) {
 						if (xhrResponse.response[0].id != null) {
 							photoId = xhrResponse.response[0].id;
 							if (gIsGroup) {
-								vkWallPost(API_URI, gAccessToken, "-" + gGid, photoId, gFromGroup);
+								vkWallPost(API_URI, gAccessToken, "-" + gGid, photoId, gFromGroup, gSignedPost);
 							} else {
-								vkWallPost(API_URI, gAccessToken, gUserId, photoId, gFromGroup);
+								vkWallPost(API_URI, gAccessToken, gUserId, photoId, gFromGroup, gSignedPost);
 							}							
 						} else {
             	        	errorHandler("requestExec (vkSaveWallPhoto)", "Не удалось получить идентификатор картинки с сервера ВКонтакте");

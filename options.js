@@ -13,6 +13,12 @@ function saveOptions() {
   		vkiuPreferencesSetItem("fromGroup", "selfPost");
   	}
 	
+	if (document.getElementById("signedPost").checked) {
+  		vkiuPreferencesSetItem("signedPost", "1");
+  	} else {
+  		vkiuPreferencesSetItem("signedPost", "0");
+  	}	
+
 	chrome.extension.getBackgroundPage().notificationShow("Настройки сохранены");
 	
 	chrome.tabs.getCurrent(function(tab) {
@@ -24,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var wallType = vkiuPreferencesGetItem("wallType");
 	var groupName = vkiuPreferencesGetItem("groupName");
 	var fromGroup = vkiuPreferencesGetItem("fromGroup");
+	var signedPost = vkiuPreferencesGetItem("signedPost");
 		
 	if ((wallType != null) && (wallType == "gid")) {
   		document.getElementById("gid").checked = true;
@@ -44,6 +51,12 @@ document.addEventListener('DOMContentLoaded', function () {
   		document.getElementById("groupPost").checked = false;
   		document.getElementById("selfPost").checked = true;  		
   	}
-  
+
+	if ((signedPost != null) && (signedPost == "1")) {
+		document.getElementById("signedPost").checked = true;  				
+        } else {
+		document.getElementById("signedPost").checked = false;  						
+	}
+
   	document.getElementById("btnOK").addEventListener("click", saveOptions);	
 });

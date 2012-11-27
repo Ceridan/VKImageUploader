@@ -18,6 +18,14 @@ Russian:
 
 Patch notes / Изменения в версиях расширения
 --------------------------------------------------
+Version 1.4.5
+
+English:
+New checkbox called "ставить подпись под сообщением" ("sign group post") added to the extension settings. If this checkbox is checked, then group wall post will be signed, otherwise, without sign.
+
+Russian:
+В настройки расширения добавлена опция "ставить подпись под сообщением". Если эта галочка поставлена, то, когда постишь на стену группы от имени группы, подпись будет видна, в противном случае, подписи не будет.
+--------------------------------------------------
 Version 1.4.4
 
 English:
@@ -25,4 +33,5 @@ In accordance with the requirements of Google manifest.json has been upgraded tw
 
 Russian:
 В соответствии с требованиями Google manifest.json обновился до версии 2.0. Старый файл манифеста переименован под именем manifest_version_1.json и оставлен в проекте.
+--------------------------------------------------
 
