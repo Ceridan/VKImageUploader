@@ -8,7 +8,7 @@ This extension focuses on the Russian-speaking segment of the VKontakte users so
 When you find somewhere in the web cool picture and want to post it to your VKontakte wall you can easily do it with this extension. You should click right mouse button to open context menu and you can see there new menu item: "На стену!" (English translation: "To the Wall!") and it will post image to your wall immediatly. Extension have options page where you can choose where do you want to post image: your wall or group.
 This is my first experience to work with chrome extensions and javascript at all.
 
-Russian:
+Russian: 
 Расширение для бразуера Google Chrome, которое позволяет постить картинки, найденные в сети, на личную стену или на стену группы социальной сети ВКонтакте (http://vk.com, http://vkontakte.ru).
 Найти расширение можно в интернет-магазине Chrome под названием "Постим картинки на стену" или по прямой ссылке: https://chrome.google.com/webstore/detail/ailbpeoongmfjfnilklgbljlibjfojln
 Если вы нашли картинку в сети и хотите ее отправить к себе на стену, достаточно шелкнуть правой кнопкой мыши на картинке (вызвать контекстнуе меню) и выбрать там новый пункт: "На стену!" и картинка будет автоматически отправлена на вашу стену. У расширения есть настройки, позволяющие выбрать куда отправлять картинки: на вашу личную стену или стену группы.
@@ -23,7 +23,7 @@ Version 1.4.5
 English:
 New checkbox called "ставить подпись под сообщением" ("sign group post") added to the extension settings. If this checkbox is checked, then group wall post will be signed, otherwise, without sign.
 
-Russian:
+Russian: 
 В настройки расширения добавлена опция "ставить подпись под сообщением". Если эта галочка поставлена, то, когда постишь на стену группы от имени группы, подпись будет видна, в противном случае, подписи не будет.
 --------------------------------------------------
 Version 1.4.4
