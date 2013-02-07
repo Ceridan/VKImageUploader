@@ -237,21 +237,18 @@ function getUriParameterByName(uri, name) {
     return res;
 };
 
-// Convert URI data to Blob object
+
 function dataURIToBlob (dataURI) {
 	var byteString = atob(dataURI.split(',')[1]);
 	var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-	var ab = new ArrayBuffer(byteString.length);
-	var ia = new Uint8Array(ab);
+	var ab = [];
 
 	for (var i = 0; i < byteString.length; i++) 
-		ia[i] = byteString.charCodeAt(i); 
+		ab.push(byteString.charCodeAt(i)); 
 
-	var bb = new WebKitBlobBuilder();
-	bb.append(ab);
-	
-	return bb.getBlob(mimeString);
+	return new Blob([new Uint8Array(ab)], { type: mimeString });
 };
+
 
 // Cross-domain request execute
 function requestExec(method, url, source, isAsyncRequest, data) {

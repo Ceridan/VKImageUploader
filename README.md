@@ -18,6 +18,17 @@ Russian:
 
 Patch notes / Изменения в версиях расширения
 --------------------------------------------------
+Version 1.4.19
+
+English:
+Fixed "Reference error: WebKitBlobBuilder is not defined" error. It happens because Google Chrome doesn't support WebKitBlobBuilder anymore.
+P.S. Few versions are skipped while fighting with Chrome web store. It has a bug, when you upload and public your extension and then trying to download it back from web store, it says: "Manifest file is invalid". If it happens with your extension just calm down and wait. In about 6-7 hours it became available by itself. Magic.
+
+Russian:
+Исправлена ошибка "Reference error: WebKitBlobBuilder is not defined", возникшая в связи с тем, что Google Chrome отказался от поддержки WebKitBlobBuilder.
+P.S. Скачок в нумерациях версий произошел из-за проблем загрузки расширения в Chrome web store. У него есть баг, когда загружаешь и публикуешь расширение, а потом пытаешся его скачать из web store, то возникает ошибка: "Файл манифеста имеет неверный формат". Если это произойдет с вашим расширением, то нужно просто расслабиться и подождать. Примерно через 6-7 часов расширение вдруг начало прекрасно скачиваться и обновляться. Магия.
+
+--------------------------------------------------
 Version 1.4.5
 
 English:

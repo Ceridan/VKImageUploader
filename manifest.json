@@ -1,8 +1,14 @@
 {
     "name": "Постим картинки на стену",
-	"version": "1.4.5",
+	"version": "1.4.19",
 	"manifest_version": 2,
  	"description": "Расширение позволяет постить картинки, найденные в интернете, на личную стену или стену группы в социальной сети ВКонтакте",
+    "icons" : {
+        "16" : "img/vkiu-16.png",
+        "32" : "img/vkiu-32.png",
+        "48" : "img/vkiu-48.png",
+        "128" : "img/vkiu-128.png"
+    },
  	"background" : {
 		"page": "background.html"
 	},
@@ -15,12 +21,6 @@
         "https://*/*"        
     ],  
     "minimum_chrome_version" : "6.0.0.0",
-    "icons" : {
-        "16" : "img/vkiu-16.png",
-        "32" : "img/vkiu-32.png",
-        "48" : "img/vkiu-48.png",
-        "128" : "img/vkiu-128.png"
-    },
 	"web_accessible_resources": [
 		"img/vkiu-32.png"
 	]	
