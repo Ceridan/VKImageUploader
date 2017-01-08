@@ -18,7 +18,7 @@ Russian:
 
 Patch notes / Изменения в версиях расширения
 --------------------------------------------------
-Version 1.5.0
+Version 1.5.1
 
 English:
 The extension is totally refactored. New features and changes in the current version:
@@ -31,6 +31,15 @@ Russian:
 - Добавлена поддержка встроенных уведомлений Chrome. 
 - Добавлена возможность в настройках указать фиксированный заголовок для сообщений, отправляемых на стену.
 - Исправлен ряд ошибок при взаимодействии с VK API.
+
+--------------------------------------------------
+Version 1.5.1
+
+English:
+Fixed caption problem when caption disappered if it includes hashtags.
+
+Russian:
+Исправлена ошибка с появлением заголовка, если в нем присутствуют хештеги.
 
 --------------------------------------------------
 

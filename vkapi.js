@@ -137,7 +137,7 @@ function VKAPI() {
         postUrl += self.isGroup ? ("&gid=" + self.groupId) : ("&uid=" + self.userId);
 
         if (self.caption) {
-            postUrl += "&caption=" + self.caption;
+            postUrl += "&caption=" + encodeURIComponent(self.caption);
         }
 
         $.ajax({
