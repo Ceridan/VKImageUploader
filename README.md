@@ -18,6 +18,22 @@ Russian:
 
 Patch notes / Изменения в версиях расширения
 --------------------------------------------------
+Version 1.5.0
+
+English:
+The extension is totally refactored. New features and changes in the current version:
+- Added support for built-in Chrome notifications.
+- You can set a fixed text caption for your wall posts in the extension options.
+- Fixed some bugs interact with VK API.
+
+Russian:
+Расширение полностью переписано. Новые возможности и изменения в текущей версии:
+- Добавлена поддержка встроенных уведомлений Chrome. 
+- Добавлена возможность в настройках указать фиксированный заголовок для сообщений, отправляемых на стену.
+- Исправлен ряд ошибок при взаимодействии с VK API.
+
+--------------------------------------------------
+
 Version 1.4.19
 
 English:

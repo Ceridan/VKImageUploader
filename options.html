@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta charset="utf-8">
   <title>Постим картинки на стену</title>
-  <script src="options.js" type="text/javascript"></script>
-  <script src="storage.js" type="text/javascript"></script>
 </head>
 <body>
   <h2>Настройки расширения "Постим картинки  на стену"</h2>
@@ -17,16 +15,25 @@
   <br />
   <label>
     Адрес страницы группы:<br />
-    <input id="groupName" type="text" name="groupName"/> (этот параметр используется только, если постим на стену группы)<br />
+    <input id="groupName" type="text" name="groupName" style="width: 500px;"/> (этот параметр используется только, если постим на стену группы)<br />
   </label>  
   <br />
   <label>
     От чьего имени оставлять запись на стене группы (этот параметр используется только, если постим на стену группы):<br />
     <input id="selfPost" type="radio" name="fromGroup"/> постить от своего имени<br />
-    <input id="groupPost" type="radio" name="fromGroup"/> постить от имени группы (
+    <input id="groupPost" type="radio" name="groupPost"/> постить от имени группы (
     <input id="signedPost" type="checkbox" name="signedPost"/>ставить подпись под сообщением)<br />
   </label>
   <br />
+  <label>
+    Типовой заголовок к сообщению на стену (если этот параметр заполнен, то у всех отправленных картинок будет одинаковый заголовок, указанный в данном поле):<br />
+    <input id="caption" type="text" name="caption" style="width: 500px;"/><br />
+  </label>
+  <br />
   <input id="btnOK" type="button" name="btnOK" value="ОК"/>
+
+  <script src="storage.js" type="text/javascript"></script>  
+  <script src="utils.js" type="text/javascript"></script>  
+  <script src="options.js" type="text/javascript"></script>
 </body>
 </html>

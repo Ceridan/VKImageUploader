@@ -1,34 +1,40 @@
-function vkiuPreferencesSetItem(name, value) {
-	if (!localStorage) {
-		alert("Ошибка доступа к локальному хранилищу!");
-		return null;
-	}
-	
-	var preferences = new Object();
-	var storageData = localStorage.getItem("vkiuPreferences");
-	
-	if (storageData != null) {
-		preferences = JSON.parse(storageData);
-	}
-	
-	preferences[name] = value;
-	
-  	localStorage.setItem("vkiuPreferences", JSON.stringify(preferences));
-};
+function Storage() {
+	var utils = new Utils();
 
-function vkiuPreferencesGetItem(name) {
-	if (!localStorage) {
-		alert("Ошибка доступа к локальному хранилищу!");
-		return null;
-	}
+	this.getItem = function(name) {
+		if (!localStorage) {
+			utils.errorHandler("Ошибка доступа к локальному хранилищу");
+			return null;
+		}
 
-	var preferences = null;
-	var storageData = localStorage.getItem("vkiuPreferences");
-	
-	if (storageData == null) {
-		return null;
-	}
-	
-	preferences = JSON.parse(storageData);
-	return preferences[name];
+		var storageData = localStorage.getItem("vkiuPreferences");
+		
+		if (storageData == null) {
+			return null;
+		}
+		
+		var preferences = JSON.parse(storageData);
+
+		return preferences[name];
+	};
+
+	this.setItem = function(name, value) {
+		if (!localStorage) {
+			utils.errorHandler("Ошибка доступа к локальному хранилищу");
+			return;
+		}
+		
+		var preferences;
+		var storageData = localStorage.getItem("vkiuPreferences");
+		
+		if (storageData != null) {
+			preferences = JSON.parse(storageData);
+		} else {
+			preferences = new Object();
+		}
+		
+		preferences[name] = value;
+		
+		localStorage.setItem("vkiuPreferences", JSON.stringify(preferences));
+	};
 };
