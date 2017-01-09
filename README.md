@@ -21,6 +21,15 @@ Patch notes / Изменения в версиях расширения
 Version 1.5.1
 
 English:
+Fixed caption problem when caption disappered if it includes hashtags.
+
+Russian:
+Исправлена ошибка с появлением заголовка, если в нем присутствуют хештеги.
+
+--------------------------------------------------
+Version 1.5.0
+
+English:
 The extension is totally refactored. New features and changes in the current version:
 - Added support for built-in Chrome notifications.
 - You can set a fixed text caption for your wall posts in the extension options.
@@ -33,16 +42,6 @@ Russian:
 - Исправлен ряд ошибок при взаимодействии с VK API.
 
 --------------------------------------------------
-Version 1.5.1
-
-English:
-Fixed caption problem when caption disappered if it includes hashtags.
-
-Russian:
-Исправлена ошибка с появлением заголовка, если в нем присутствуют хештеги.
-
---------------------------------------------------
-
 Version 1.4.19
 
 English:
