@@ -5,6 +5,7 @@ function VKAPI() {
     this.AUTHORIZATION_URI = "https://api.vk.com/oauth/authorize";	        // Authorization uri for vvk.com
     this.REDIRECT_URI = "http://api.vk.com/blank.html";	                    // Redirect uri for vk.com
     this.API_URI = "https://api.vk.com";	                                // Api uri for vk.com
+    this.API_VERSION = "3.0";                                               // Версия VK API
 
     // Include storage and utils modules
     var storage = new Storage();                                            // Storage Initilization
@@ -49,6 +50,7 @@ function VKAPI() {
             authUrl += "&display=popup";
             authUrl += "&redirect_uri=" + self.REDIRECT_URI;
             authUrl += "&response_type=token";
+            authUrl += "&v=" + self.API_VERSION;
 
             open(authUrl);
 
@@ -81,6 +83,7 @@ function VKAPI() {
         var getUrl = self.API_URI;
         getUrl += "/method/photos.getWallUploadServer";
         getUrl += "?access_token=" + self.accessToken;
+        getUrl += "&v=" + self.API_VERSION;
         getUrl += self.isGroup ? ("&gid=" + self.groupId) : ("&uid=" + self.userId);
 
         $.ajax({
@@ -131,6 +134,7 @@ function VKAPI() {
         var postUrl = self.API_URI;
         postUrl += "/method/photos.saveWallPhoto";
         postUrl += "?access_token=" + self.accessToken;
+        postUrl += "&v=" + self.API_VERSION;
         postUrl += "&server=" + server;
         postUrl += "&photo=" + photo;
         postUrl += "&hash=" + hash;
@@ -163,6 +167,7 @@ function VKAPI() {
         var getUrl = self.API_URI;
         getUrl += "/method/wall.post";
         getUrl += "?access_token=" + self.accessToken;
+        getUrl += "&v=" + self.API_VERSION;
         getUrl += "&owner_id=" + (self.isGroup ? "-" + self.groupId : self.userId);		
         getUrl += "&attachments=" + photoId;
         getUrl += "&from_group=" + self.fromGroup;
@@ -190,7 +195,8 @@ function VKAPI() {
     this.setUserGroup = function(callback) {
         var getUrl = self.API_URI;
         getUrl += "/method/groups.getById";
-        getUrl += "?access_token=" + self.accessToken;	
+        getUrl += "?access_token=" + self.accessToken;
+        getUrl += "&v=" + self.API_VERSION;	
         getUrl += "&group_id=" + utils.extractGroupName(self.groupName);
 
         $.ajax({

@@ -18,6 +18,17 @@ Russian:
 
 Patch notes / Изменения в версиях расширения
 --------------------------------------------------
+Version 1.6.0
+
+English:
+VK API now requires explicitly set API version number. This project stuck on the old API version 3.0, so actually this hotfix just passes 3.0 version parameter to the request URLs. 
+
+*TODO: Migrate to 5.73 or newer version of API.*
+
+Russian:
+VK API теперь требует явно передавать версию API. Этот проект работает со старой версией API 3.0, поэтому на самом деле данное исправление просто педает параметр с версией 3.0 ко всем запросам.
+
+--------------------------------------------------
 Version 1.5.1
 
 English:
